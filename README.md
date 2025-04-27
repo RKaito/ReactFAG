@@ -1,54 +1,47 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Como Rodar o Projeto, vamo lá
 
-Currently, two official plugins are available:
+Tu precisa ter o **Node.js** instalado a princípio  
+Veja se tá baixado com esse comando no bash (vai que não tem, né?):  
+**node -v**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Se não tiver, tem que instalar o **npm** também, se não tiver:  
+**npm -v**
 
-## Expanding the ESLint configuration
+Aqui estão os links para tentar instalar caso não tenha:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Node.js](https://nodejs.org/pt)
+- [Documentação do npm](https://docs.npmjs.com/getting-started)
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Esses são os links para instalar, caso necessário.
+
+### Para rodar o projeto agora
+
+Clone esse repositório no terminal do teu VSCode (eu uso o bash para garantir, né?):
+
+```bash
+git clone https://github.com/RKaito/ReactFAG.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Navegue pra pasta ques estiver esse projeto no teu pc com o comando "cd":
+cd ReactFAG
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+e rode um:
+npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+depois de instalar as dependências com o comando "npm install":
+npm run dev
+
+de um ctrl+click na url ou jogue essa url no launch.json (pasta .vscode):
+"configurations": [
+{
+"type": "chrome",
+"request": "launch",
+"name": "Launch Chrome against localhost",
+"url": "http://localhost:5174/",
+"webRoot": "${workspaceFolder}"
+}
+]
+
+Então rodando o projeto você poderá buscar pelos usuários do github com base em seu nome de usuário
